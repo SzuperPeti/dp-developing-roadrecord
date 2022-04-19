@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "teszt-feladat": "apps/teszt-feladat",
+    "teszt-feladat-e2e": "apps/teszt-feladat-e2e"
+  }
+}
