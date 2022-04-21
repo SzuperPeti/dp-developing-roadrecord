@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+  white-space: nowrap;
+  th, td {
+    padding: 10px;
+  }
+}
+
+.table-div {
+  min-width: 600px;
+  overflow: overlay
+}

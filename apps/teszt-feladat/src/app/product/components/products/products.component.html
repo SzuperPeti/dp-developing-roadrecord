@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="mat-elevation-z8 mb-3" style="width: 600px">
+    <div style="overflow: overlay">
+      <button [routerLink]="['/products', 'edit-product', 0]" type="button" mat-button>Add new Product</button>
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [ngClass]="{ error: !element.id }"
+          >
+            {{ element.id }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>name</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [ngClass]="{ error: !element.name }"
+          >
+            {{ element.name }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="net_price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>net_price</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [ngClass]="{ error: !element.net_price }"
+          >
+            {{ element.net_price | currency: 'HUF ':'symbol' }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="VAT">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            áfa százalék érték
+          </th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [ngClass]="{ error: !element.tax.percent }"
+          >
+            {{ element.tax.percent }} %
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-icon-button
+              [routerLink]="['/products', 'edit-product', element.id]"
+              class="example-icon"
+              aria-label="Example icon-button with share icon"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <div *ngIf="dataSource?.data?.length === 0">
+        <div style="height: 500px; text-align: center">
+          No generated items
+        </div>
+      </div>
+    </div>
+
+    <mat-paginator
+      #paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      [length]="dataSource?.data?.length"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>

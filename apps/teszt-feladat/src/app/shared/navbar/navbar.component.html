@@ -1,0 +1,17 @@
+<nav>
+  <mat-toolbar>
+    <span>Teszt-Feladat</span>
+    <button *ngIf="isAuthenticated | async" [routerLink]="['products', 'products-list']" mat-button aria-label="Example icon-button with share icon">
+      Products
+    </button>
+    <button *ngIf="(isAuthenticated | async) === false"  [routerLink]="['authentication', 'login']" mat-button aria-label="Example icon-button with heart icon">
+      Login
+    </button>
+    <button *ngIf="isAuthenticated | async"  (click)="logout()" mat-button aria-label="Example icon-button with heart icon">
+      Logout
+    </button>
+    <button *ngIf="(isAuthenticated | async) === false"  [routerLink]="['authentication', 'register']" mat-button aria-label="Example icon-button with share icon">
+      Register
+    </button>
+  </mat-toolbar>
+</nav>
