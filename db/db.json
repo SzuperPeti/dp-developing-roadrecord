@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$2DISj..IqXg4SjigBQighu2Qw8kNY6NqgMLk1/2DcKtadbu.JwpHi",
+      "id": 1
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Product",
+      "net_price": 100,
+      "taxId": 1
+    },
+    {
+      "id": 2,
+      "name": "Product2",
+      "net_price": "50",
+      "taxId": 1
+    },
+    {
+      "id": 3,
+      "name": "Product",
+      "net_price": 100,
+      "taxId": 1
+    },
+    {
+      "id": 4,
+      "name": "Product2",
+      "net_price": 102,
+      "taxId": 1
+    },
+    {
+      "id": 5,
+      "name": "Produc",
+      "net_price": 13012312321,
+      "taxId": 2
+    },
+    {
+      "id": 6,
+      "name": "Product2",
+      "net_price": 102,
+      "taxId": 1
+    },
+    {
+      "id": 7,
+      "name": "Product",
+      "net_price": 100,
+      "taxId": 2
+    },
+    {
+      "id": 8,
+      "name": "Product2",
+      "net_price": 102,
+      "taxId": 2
+    },
+    {
+      "id": 9,
+      "name": "new product",
+      "net_price": "100",
+      "taxId": 2
+    }
+  ],
+  "taxs": [
+    {
+      "id": 1,
+      "name": "0%",
+      "percent": 0
+    },
+    {
+      "id": 2,
+      "name": "27%",
+      "percent": 27
+    },
+    {
+      "id": 3,
+      "name": "20%",
+      "percent": 20
+    }
+  ]
+}
